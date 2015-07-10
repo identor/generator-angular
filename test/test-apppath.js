@@ -129,12 +129,12 @@ describe('Angular generator appPath option', function () {
 
     ['constant', 'factory', 'provider', 'value'].forEach(function(t) {
       it('should generate a new ' + t, function (done) {
-        generatorTest(t, 'service', 'services', _.camelize, _.camelize, '', done);
+        generatorTest(t, 'service', 'services', _.clean, _.clean, '', done);
       });
     });
 
     it('should generate a new service', function (done) {
-      generatorTest('service', 'service', 'services', _.capitalize, _.capitalize, '', done);
+      generatorTest('service', 'service', 'services', _.clean, _.clean, '', done);
     });
   });
 

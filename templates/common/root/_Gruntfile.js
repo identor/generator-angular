@@ -67,6 +67,10 @@ module.exports = function (grunt) {
       gruntfile: {
         files: ['Gruntfile.js']
       },
+      unit: {
+         files: [ 'test/spec/{,*/}*.js', 'test/mock/{,*/}*.js', '<%= yeoman.app %>/scripts/{,*/}*.js' ],
+         tasks: ['unit']
+      },
       livereload: {
         options: {
           livereload: '<%%= connect.options.livereload %>'
@@ -527,6 +531,13 @@ module.exports = function (grunt) {
     grunt.log.warn('The `server` task has been deprecated. Use `grunt serve` to start a server.');
     grunt.task.run(['serve:' + target]);
   });
+
+  grunt.registerTask('unit', [
+    'clean:server',
+    'wiredep',
+    'karma',
+    'watch:unit'
+  ]);
 
   grunt.registerTask('test', [
     'clean:server',

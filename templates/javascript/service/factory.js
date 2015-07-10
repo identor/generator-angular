@@ -1,23 +1,21 @@
-'use strict';
+(function () {
+  'use strict';
 
-/**
- * @ngdoc service
- * @name <%= scriptAppName %>.<%= cameledName %>
- * @description
- * # <%= cameledName %>
- * Factory in the <%= scriptAppName %>.
- */
-angular.module('<%= scriptAppName %>')
-  .factory('<%= cameledName %>', function () {
-    // Service logic
-    // ...
+  /**
+   * @ngdoc service
+   * @name <%= scriptAppName %>.<%= name %>
+   * @description
+   * # <%= name %>
+   * Factory service in <%= scriptAppName %>.
+   */
 
-    var meaningOfLife = 42;
+  var app = angular.module('<%= scriptAppName %>')
+  app.factory('<%= name %>' retrieveObject);
 
-    // Public API here
-    return {
-      someMethod: function () {
-        return meaningOfLife;
-      }
-    };
-  });
+  /*
+   * Imports whatever retrieveObject returns when injected
+   */
+  function retrieveObject() {
+    return new Object();
+  }
+}();

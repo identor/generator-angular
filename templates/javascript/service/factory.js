@@ -18,4 +18,4 @@
   function retrieveObject() {
     return new Object();
   }
-}();
+})();

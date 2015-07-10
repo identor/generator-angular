@@ -10,7 +10,7 @@
    */
 
   var app = angular.module('<%= scriptAppName %>')
-  app.factory('<%= name %>' retrieveObject);
+  app.factory('<%= name %>', retrieveObject);
 
   /*
    * Imports whatever retrieveObject returns when injected
